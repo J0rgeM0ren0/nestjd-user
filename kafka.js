@@ -13,7 +13,7 @@ const kafka = new Kafka({
 const producer = kafka.producer({
     createPartitioner: Partitioners.LegacyPartitioner
 })
-const consumer = kafka.consumer({ groupId: 'user-consumer-client' })
+const consumer = kafka.consumer({ groupId: 'user-consumer' })
 
 const run = async () => {
     await producer.connect();

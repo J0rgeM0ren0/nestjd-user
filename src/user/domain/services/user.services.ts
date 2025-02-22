@@ -27,7 +27,7 @@ export class UserService {
             newUser.email = createUserDto.email;
             newUser.password = createUserDto.password;
             newUser.phone = createUserDto.phone ?? '';
-            this.client.emit('user_registered', newUser);
+            this.client.emit('topic-test', newUser.email);
             return;
         }catch (error) {
             if (error.code.toString() === '11000') {
