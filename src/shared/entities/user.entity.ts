@@ -4,9 +4,6 @@ import { Document } from "mongoose";
 export type UserDocument = User & Document;
 @Schema()
 export class User {
-    @Prop()
-    id: string;
-
     @Prop({ required: true })
     name: string;
 
@@ -18,6 +15,9 @@ export class User {
 
     @Prop()
     phone: string;
+
+    @Prop()
+    refreshToken: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

@@ -1,6 +1,7 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, Patch, Param } from '@nestjs/common';
 import { UserUseCase } from '../../../../application/use-cases/register-user.use-case';
 import { CreateUserDto } from '../../../../application/dto/create-user.dto';
+import { UpdateUserDto } from '../../../../application/dto/update-user.dto';
 import { LoginUserDTO } from "../../../../application/dto/login-user.dto";
 
 @Controller('user')
@@ -15,5 +16,10 @@ export class UserController {
     @Post('login')
     login(@Body() user: LoginUserDTO) {
         return this.userUseCase.loginUser(user);
+    }
+
+    @Patch(':id')
+    update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
+        return this.userUseCase.logoutUser(id, updateUserDto);
     }
 }
