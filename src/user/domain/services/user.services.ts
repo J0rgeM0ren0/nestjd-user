@@ -7,11 +7,11 @@ import {
 import { UserRepository } from '../repositories/user.repository'
 import { User } from '../../../shared/entities/user.entity';
 import { CreateUserDto } from "../../application/dto/create-user.dto";
-import { JwtService, JwtSignOptions } from '@nestjs/jwt';
+import { JwtService } from '@nestjs/jwt';
 import { LoginUserDTO } from "../../application/dto/login-user.dto";
 import { ClientKafka } from "@nestjs/microservices";
 import {UpdateUserDto} from "../../application/dto/update-user.dto";
-import {ObjectId, Types} from 'mongoose';
+import { Types } from 'mongoose';
 
 @Injectable()
 export class UserService {
